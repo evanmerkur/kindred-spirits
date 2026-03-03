@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-warm-bg: #f5f5f0;
+  --color-olive: #5A5A40;
+  --color-cream: #FFFFFF;
+}
+
+@layer base {
+  body {
+    @apply bg-warm-bg text-stone-800 font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+.pill-image {
+  border-radius: 9999px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+
+.card-rounded {
+  @apply bg-cream rounded-[32px] shadow-sm border border-stone-200/50;
+}
+
+.btn-olive {
+  @apply bg-olive text-white rounded-full px-8 py-3 font-medium transition-all hover:opacity-90 active:scale-95;
+}
