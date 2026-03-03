@@ -10,6 +10,7 @@ export default function Navbar() {
   const isHome = location.pathname === "/";
 
   const navLinks = [
+    { name: "Our Story", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Pricing", href: "/pricing" },
     { name: "FAQ", href: "/faq" },

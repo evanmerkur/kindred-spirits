@@ -15,6 +15,8 @@ import {
   ShieldCheck
 } from "lucide-react";
 
+import { Link } from "react-router-dom";
+
 export default function Home() {
   return (
     <>
@@ -36,10 +38,10 @@ export default function Home() {
               We support older adults who feel isolated, need social engagement, or would benefit from regular companionship visits.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="btn-olive">Explore Services</button>
-              <button className="px-8 py-3 rounded-full border border-stone-300 font-medium hover:bg-stone-100 transition-colors">
+              <Link to="/services" className="btn-olive">Explore Services</Link>
+              <Link to="/about" className="px-8 py-3 rounded-full border border-stone-300 font-medium hover:bg-stone-100 transition-colors">
                 Learn Our Story
-              </button>
+              </Link>
             </div>
           </motion.div>
 
