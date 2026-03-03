@@ -199,7 +199,7 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-full bg-warm-bg flex items-center justify-center text-olive">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <span className="text-stone-700 font-medium">(555) 123-4567</span>
+                  <span className="text-stone-700 font-medium">(615) 123-4567</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-warm-bg flex items-center justify-center text-olive">
