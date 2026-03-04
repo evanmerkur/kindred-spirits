@@ -5,7 +5,7 @@ import { useEffect } from "react";
 const faqs = [
   {
     question: "Is this medical care?",
-    answer: "No. Kindred Spirits provides non-medical companionship and daily support. We focus on social interaction, emotional support, and daily activities rather than clinical or medical treatments."
+    answer: "No. Silver Circle Companions provides non-medical companionship and daily support. We focus on social interaction, emotional support, and daily activities rather than clinical or medical treatments."
   },
   {
     question: "Do you provide personal hygiene support?",

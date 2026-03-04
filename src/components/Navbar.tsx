@@ -19,9 +19,14 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-warm-bg/80 backdrop-blur-md border-b border-stone-200">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <Heart className="text-olive w-6 h-6 fill-olive/20" />
-          <span className="font-serif text-2xl font-semibold text-stone-900">Kindred Spirits</span>
+        <Link to="/" className="flex flex-col">
+          <div className="flex items-center gap-2">
+            <Heart className="text-olive w-6 h-6 fill-olive/20" />
+            <span className="font-serif text-2xl font-semibold text-stone-900">Silver Circle Companions</span>
+          </div>
+          <span className="text-[9px] uppercase tracking-[0.2em] text-olive font-bold ml-8 -mt-1 hidden lg:block">
+            Non Medical Companion Care for Seniors
+          </span>
         </Link>
         
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">

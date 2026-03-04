@@ -29,7 +29,6 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-olive font-medium tracking-widest uppercase text-xs mb-4 block">Non-Medical Companion Care for Seniors</span>
             <h1 className="text-6xl md:text-7xl lg:text-8xl leading-[1.1] mb-8 font-light italic">
               Helping Your Loved One Stay <br />
               <span className="text-olive">Connected, Engaged, and Supported.</span>
@@ -85,7 +84,7 @@ export default function Home() {
           <Heart className="w-12 h-12 text-olive mx-auto mb-8 opacity-40" />
           <h2 className="text-4xl md:text-5xl mb-8">Our Heart & Mission</h2>
           <p className="text-xl text-stone-600 leading-relaxed italic">
-            "At Kindred Spirits, we believe that aging should be a season of connection, not isolation. 
+            "At Silver Circle Companions, we believe that aging should be a season of connection, not isolation. 
             Our focus is purely on the human side of care—companionship, conversation, and the simple 
             joys of shared moments. We aren't medical professionals; we are friends, listeners, 
             and dedicated companions for the journey."
@@ -174,7 +173,7 @@ export default function Home() {
           <div className="relative">
             <img 
               src="https://images.unsplash.com/photo-1581579186913-45ac3e6efe93?auto=format&fit=crop&q=80&w=800" 
-              alt="Kindred Spirits Companion" 
+              alt="Silver Circle Companion" 
               className="rounded-[40px] w-full h-[600px] object-cover shadow-2xl"
               referrerPolicy="no-referrer"
             />
