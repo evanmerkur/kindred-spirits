@@ -8,7 +8,7 @@ export default function Footer() {
         <Link to="/" className="flex flex-col gap-1">
           <div className="flex items-center gap-2">
             <Heart className="text-olive w-5 h-5 fill-olive/20" />
-            <span className="font-serif text-xl font-semibold text-stone-900">Silver Circle Companions</span>
+            <span className="font-serif text-xl font-semibold text-stone-900">Silver Care Companions</span>
           </div>
           <span className="text-[10px] uppercase tracking-widest text-stone-400 font-medium ml-7">
             Non Medical Companion Care for Seniors
@@ -16,7 +16,7 @@ export default function Footer() {
         </Link>
         
         <p className="text-stone-400 text-sm">
-          © 2024 Silver Circle Companions. All rights reserved.
+          © 2024 Silver Care Companions. All rights reserved.
         </p>
 
         <div className="flex gap-8 text-sm text-stone-500">

@@ -8,15 +8,16 @@ import {
   Calendar,
   CheckCircle2,
   Clock,
-  Heart
+  Heart,
+  FileText
 } from "lucide-react";
 import { useEffect } from "react";
 
 const companionshipServices = [
   { icon: <MessageCircle className="w-5 h-5" />, title: "Conversation", description: "Sharing stories, discussing current events, or simply enjoying a quiet moment together." },
   { icon: <Coffee className="w-5 h-5" />, title: "Games", description: "Playing cards, board games, or puzzles to keep the mind active and engaged." },
-  { icon: <BookOpen className="w-5 h-5" />, title: "Reading", description: "Reading aloud from favorite books, newspapers, or letters from family." },
-  { icon: <Heart className="w-5 h-5" />, title: "Shared Hobbies", description: "Assisting with cherished hobbies, crafts, or light gardening." }
+  { icon: <Car className="w-5 h-5" />, title: "Outings", description: "Going for a gentle walk in the park or enjoying a meal together at a local restaurant." },
+  { icon: <Heart className="w-5 h-5" />, title: "Shared Hobbies", description: "Assisting with cherished hobbies, crafts, or other creative interests." }
 ];
 
 const practicalSupport = [
@@ -138,7 +139,7 @@ export default function Services() {
                 <CheckCircle2 className="text-olive w-6 h-6 shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold text-stone-800">Active Engagement</h4>
-                  <p className="text-sm text-stone-500">A short walk in the garden or playing a favorite board game.</p>
+                  <p className="text-sm text-stone-500">A gentle walk in the park or playing a favorite board game.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-sm">
@@ -153,6 +154,44 @@ export default function Services() {
                 <div>
                   <h4 className="font-semibold text-stone-800">Family Connection</h4>
                   <p className="text-sm text-stone-500">A video call with grandchildren or sharing new family photos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* After-Visit Reporting Section */}
+        <div className="mt-24 py-24 border-t border-stone-200">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div className="order-2 md:order-1">
+              <img 
+                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800" 
+                alt="Person writing a report" 
+                className="rounded-[40px] w-full h-[400px] object-cover shadow-xl"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="order-1 md:order-2 space-y-6">
+              <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center text-olive">
+                <FileText className="w-6 h-6" />
+              </div>
+              <h2 className="text-4xl md:text-5xl font-serif">Consistent Communication</h2>
+              <p className="text-lg text-stone-600 leading-relaxed">
+                We believe that peace of mind comes from staying informed. After every single visit, 
+                I provide a detailed Post Visit Report sent directly to the family.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 text-stone-700">
+                  <CheckCircle2 className="text-olive w-5 h-5" />
+                  <span>Summary of the day's activities</span>
+                </div>
+                <div className="flex items-center gap-3 text-stone-700">
+                  <CheckCircle2 className="text-olive w-5 h-5" />
+                  <span>Observations on overall well-being</span>
+                </div>
+                <div className="flex items-center gap-3 text-stone-700">
+                  <CheckCircle2 className="text-olive w-5 h-5" />
+                  <span>Updates on any health or safety concerns</span>
                 </div>
               </div>
             </div>

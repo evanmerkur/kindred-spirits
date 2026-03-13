@@ -16,7 +16,7 @@ export default function About() {
           className="text-center mb-16"
         >
           <span className="text-olive font-medium tracking-widest uppercase text-xs mb-4 block">Our Story</span>
-          <h1 className="text-5xl md:text-6xl mb-8 italic">The Heart Behind <br />Silver Circle Companions</h1>
+          <h1 className="text-5xl md:text-6xl mb-8 italic">The Heart Behind <br />Silver Care Companions</h1>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
@@ -40,7 +40,7 @@ export default function About() {
             className="space-y-6 text-lg text-stone-600 leading-relaxed"
           >
             <p>
-              Silver Circle Companions wasn't born out of a business plan, but out of a lifetime of observation and a deeply rooted family value. 
+              Silver Care Companions wasn't born out of a business plan, but out of a lifetime of observation and a deeply rooted family value. 
             </p>
             <p>
               Growing up, I had the privilege of watching my father. He didn't just "check in" on our elderly relatives; he truly *spent time* with them. Whether it was sitting on a porch for hours listening to stories I'm sure he'd heard a dozen times, or making a special trip just to bring a favorite treat, he treated every elderly member of our family with a level of dignity and genuine friendship that stayed with me.
@@ -80,7 +80,7 @@ export default function About() {
             Those values became my own. I realized that there are so many seniors in our community who have incredible stories to tell and a wealth of wisdom to share, but they lack that consistent, meaningful connection.
           </p>
           <p>
-            Silver Circle Companions is my way of honoring that legacy. We aren't just providing a service; we are carrying forward a tradition of respect, patience, and genuine companionship. We treat your loved ones the way my father treated ours—with a heart that truly values their presence.
+            Silver Care Companions is my way of honoring that legacy. We aren't just providing a service; we are carrying forward a tradition of respect, patience, and genuine companionship. We treat your loved ones the way my father treated ours—with a heart that truly values their presence.
           </p>
           <div className="pt-8 text-center">
             <Heart className="w-12 h-12 text-olive mx-auto mb-4 opacity-40" />

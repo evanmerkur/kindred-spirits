@@ -12,7 +12,6 @@ export default function Navbar() {
   const navLinks = [
     { name: "Our Story", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Pricing", href: "/pricing" },
     { name: "FAQ", href: "/faq" },
   ];
 
@@ -22,7 +21,7 @@ export default function Navbar() {
         <Link to="/" className="flex flex-col">
           <div className="flex items-center gap-2">
             <Heart className="text-olive w-6 h-6 fill-olive/20" />
-            <span className="font-serif text-2xl font-semibold text-stone-900">Silver Circle Companions</span>
+            <span className="font-serif text-2xl font-semibold text-stone-900">Silver Care Companions</span>
           </div>
           <span className="text-[9px] uppercase tracking-[0.2em] text-olive font-bold ml-8 -mt-1 hidden lg:block">
             Non Medical Companion Care for Seniors

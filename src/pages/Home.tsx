@@ -84,7 +84,7 @@ export default function Home() {
           <Heart className="w-12 h-12 text-olive mx-auto mb-8 opacity-40" />
           <h2 className="text-4xl md:text-5xl mb-8">Our Heart & Mission</h2>
           <p className="text-xl text-stone-600 leading-relaxed italic">
-            "At Silver Circle Companions, we believe that aging should be a season of connection, not isolation. 
+            "At Silver Care Companions, we believe that aging should be a season of connection, not isolation. 
             Our focus is purely on the human side of care—companionship, conversation, and the simple 
             joys of shared moments. We aren't medical professionals; we are friends, listeners, 
             and dedicated companions for the journey."
@@ -173,7 +173,7 @@ export default function Home() {
           <div className="relative">
             <img 
               src="https://images.unsplash.com/photo-1581579186913-45ac3e6efe93?auto=format&fit=crop&q=80&w=800" 
-              alt="Silver Circle Companion" 
+              alt="Silver Care Companion" 
               className="rounded-[40px] w-full h-[600px] object-cover shadow-2xl"
               referrerPolicy="no-referrer"
             />
@@ -204,7 +204,7 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-full bg-warm-bg flex items-center justify-center text-olive">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <span className="text-stone-700 font-medium">hello@kindredspiritstn.com</span>
+                  <span className="text-stone-700 font-medium">hello@silvercarecompanions.com</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-warm-bg flex items-center justify-center text-olive">
