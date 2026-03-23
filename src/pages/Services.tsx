@@ -178,7 +178,8 @@ export default function Services() {
               <h2 className="text-4xl md:text-5xl font-serif">Consistent Communication</h2>
               <p className="text-lg text-stone-600 leading-relaxed">
                 We believe that peace of mind comes from staying informed. After every single visit, 
-                I provide a detailed Post Visit Report sent directly to the family.
+                I provide a detailed Post Visit Report sent directly to the family or anyone who 
+                would like to stay updated on the person I am visiting with.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-stone-700">

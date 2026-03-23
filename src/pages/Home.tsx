@@ -53,8 +53,8 @@ export default function Home() {
           >
             <div className="grid grid-cols-2 gap-4">
               <img 
-                src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&q=80&w=800" 
-                alt="Senior woman smiling" 
+                src="https://images.unsplash.com/photo-1581579186913-45ac3e6efe93?auto=format&fit=crop&q=80&w=800" 
+                alt="Older person having a meal with a younger companion" 
                 className="pill-image w-full h-[400px] object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -157,6 +157,15 @@ export default function Home() {
                 <div>
                   <h4 className="text-xl mb-2">Emotional Sensitivity</h4>
                   <p className="text-cream/70 leading-relaxed">We match based on personality and compatibility, ensuring your loved one feels truly understood and valued.</p>
+                </div>
+              </div>
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-full border border-cream/30 flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="text-xl mb-2">Post-Visit Reporting</h4>
+                  <p className="text-cream/70 leading-relaxed">Detailed reports sent after every visit to family members or anyone who would like to stay updated.</p>
                 </div>
               </div>
               <div className="flex gap-6">
