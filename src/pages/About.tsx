@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Heart, Quote } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 export default function About() {
@@ -82,9 +83,10 @@ export default function About() {
           <p>
             Silver Care Companions is my way of honoring that legacy. We aren't just providing a service; we are carrying forward a tradition of respect, patience, and genuine companionship. We treat your loved ones the way my father treated ours—with a heart that truly values their presence.
           </p>
-          <div className="pt-8 text-center">
+          <div className="pt-12 text-center">
             <Heart className="w-12 h-12 text-olive mx-auto mb-4 opacity-40" />
-            <p className="font-serif italic text-2xl text-stone-800">For the journey, together.</p>
+            <p className="font-serif italic text-2xl text-stone-800 mb-8">For the journey, together.</p>
+            <Link to="/contact" className="btn-olive">Get in Touch</Link>
           </div>
         </motion.div>
       </div>

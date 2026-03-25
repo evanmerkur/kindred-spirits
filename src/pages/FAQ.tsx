@@ -1,5 +1,6 @@
 import FAQItem from "../components/FAQItem";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 const faqs = [
@@ -53,6 +54,12 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <FAQItem key={index} question={faq.question} answer={faq.answer} />
           ))}
+        </div>
+
+        <div className="mt-24 text-center p-12 bg-stone-100 rounded-[40px]">
+          <h3 className="text-3xl font-serif mb-4">Still have questions?</h3>
+          <p className="text-stone-600 mb-8">We're here to help you find the best care for your loved one.</p>
+          <Link to="/contact" className="btn-olive">Get in Touch</Link>
         </div>
       </div>
     </div>

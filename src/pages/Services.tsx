@@ -11,6 +11,7 @@ import {
   Heart,
   FileText
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 const companionshipServices = [
@@ -197,6 +198,16 @@ export default function Services() {
               </div>
             </div>
           </div>
+        </div>
+        {/* CTA Section */}
+        <div className="mt-24 text-center p-12 bg-olive text-cream rounded-[40px]">
+          <h2 className="text-4xl font-serif mb-6">Ready to find a companion?</h2>
+          <p className="text-cream/80 text-lg mb-10 max-w-2xl mx-auto">
+            We're here to provide the social engagement and emotional support your loved one deserves.
+          </p>
+          <Link to="/contact" className="px-10 py-4 bg-cream text-olive rounded-full font-bold text-lg hover:bg-white transition-colors">
+            Get in Touch
+          </Link>
         </div>
       </div>
     </div>

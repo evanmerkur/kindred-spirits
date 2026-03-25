@@ -36,7 +36,7 @@ export default function Navbar() {
               <Link key={link.name} to={link.href} className="hover:text-olive transition-colors">{link.name}</Link>
             )
           ))}
-          <button className="btn-olive">Get in Touch</button>
+          <Link to="/contact" className="btn-olive">Get in Touch</Link>
         </div>
 
         <button 
@@ -61,7 +61,7 @@ export default function Navbar() {
               <Link key={link.name} to={link.href} onClick={() => setIsMenuOpen(false)} className="text-lg font-serif">{link.name}</Link>
             )
           ))}
-          <button className="btn-olive w-full">Get in Touch</button>
+          <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="btn-olive w-full text-center">Get in Touch</Link>
         </motion.div>
       )}
     </nav>
