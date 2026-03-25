@@ -18,6 +18,19 @@ import {
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
+    
+    const subject = `New Contact Inquiry from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    
+    window.location.href = `mailto:info@silvercarecompanions.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -213,33 +226,33 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-full bg-warm-bg flex items-center justify-center text-olive">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <span className="text-stone-700 font-medium">hello@silvercarecompanions.com</span>
+                  <span className="text-stone-700 font-medium">info@silvercarecompanions.com</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-warm-bg flex items-center justify-center text-olive">
                     <MapPin className="w-5 h-5" />
                   </div>
-                  <span className="text-stone-700 font-medium">Serving the Greater Area</span>
+                  <span className="text-stone-700 font-medium">Serving the Greater Nashville Area</span>
                 </div>
               </div>
             </div>
 
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-stone-500 uppercase tracking-wider">Your Name</label>
-                  <input type="text" className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="Jane Doe" />
+                  <input name="name" type="text" required className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="Jane Doe" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-stone-500 uppercase tracking-wider">Email Address</label>
-                  <input type="email" className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="jane@example.com" />
+                  <input name="email" type="email" required className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="jane@example.com" />
                 </div>
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-stone-500 uppercase tracking-wider">How can we help?</label>
-                <textarea rows={4} className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="Tell us a little about your needs..."></textarea>
+                <textarea name="message" rows={4} required className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="Tell us a little about your needs..."></textarea>
               </div>
-              <button className="btn-olive w-full py-5 text-lg">Send Message</button>
+              <button type="submit" className="btn-olive w-full py-5 text-lg">Send Message</button>
             </form>
           </div>
         </div>
