@@ -73,7 +73,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-stone-400 uppercase tracking-wider">Phone</p>
-                  <span className="text-stone-700 font-medium text-lg">(615) 123-4567</span>
+                  <span className="text-stone-700 font-medium text-lg">615-241-6881</span>
                 </div>
               </div>
               <div className="flex items-center gap-6">
