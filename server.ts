@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import express from "express";
 import { createServer as createViteServer } from "vite";
 import path from "path";
