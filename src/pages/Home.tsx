@@ -97,7 +97,7 @@ export default function Home() {
               </p>
               <div className="mt-4 flex items-center gap-2">
                 <div className="w-8 h-px bg-olive/30"></div>
-                <span className="text-xs uppercase tracking-wider font-semibold text-stone-400">Michael, Client</span>
+                <span className="text-xs uppercase tracking-wider font-semibold text-stone-400">Michael, Companion</span>
               </div>
             </div>
           </motion.div>
