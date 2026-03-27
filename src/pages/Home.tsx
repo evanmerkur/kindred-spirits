@@ -88,18 +88,8 @@ export default function Home() {
             className="relative"
           >
             <div className="grid grid-cols-2 gap-4">
-              <img 
-                src="https://images.unsplash.com/photo-1581579186913-45ac3e6efe93?auto=format&fit=crop&q=80&w=800" 
-                alt="Older person having a meal with a younger companion" 
-                className="pill-image w-full h-[400px] object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <img 
-                src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&q=80&w=800" 
-                alt="Two people holding hands" 
-                className="pill-image w-full h-[400px] object-cover mt-12"
-                referrerPolicy="no-referrer"
-              />
+              <img src="https://raw.githubusercontent.com/evanmerkur/kindred-spirits/main/public/assets/Hero_Nashville.png" alt="Senior smiling" className="w-full h-full object-cover rounded-full aspect-[4/5]" referrerPolicy="no-referrer" />
+              <img src="https://raw.githubusercontent.com/evanmerkur/kindred-spirits/main/public/assets/Steady_Companion.png" alt="Companion walking" className="w-full h-full object-cover rounded-full aspect-[4/5] mt-12" referrerPolicy="no-referrer" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-cream p-8 rounded-3xl shadow-xl max-w-[240px] border border-stone-100 hidden md:block">
               <p className="font-serif italic text-lg leading-snug text-stone-700">
@@ -107,7 +97,7 @@ export default function Home() {
               </p>
               <div className="mt-4 flex items-center gap-2">
                 <div className="w-8 h-px bg-olive/30"></div>
-                <span className="text-xs uppercase tracking-wider font-semibold text-stone-400">Margaret, Client</span>
+                <span className="text-xs uppercase tracking-wider font-semibold text-stone-400">Michael, Client</span>
               </div>
             </div>
           </motion.div>
@@ -217,8 +207,8 @@ export default function Home() {
           </div>
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1581579186913-45ac3e6efe93?auto=format&fit=crop&q=80&w=800" 
-              alt="Silver Care Companion" 
+              src="https://raw.githubusercontent.com/evanmerkur/kindred-spirits/main/public/assets/Connection_Hands.png" 
+              alt="Caring hands" 
               className="rounded-[40px] w-full h-[600px] object-cover shadow-2xl"
               referrerPolicy="no-referrer"
             />

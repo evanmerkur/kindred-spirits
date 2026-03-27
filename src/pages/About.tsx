@@ -27,8 +27,8 @@ export default function About() {
             transition={{ delay: 0.2 }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&q=80&w=800" 
-              alt="Hands of an elderly and young person" 
+              src="https://raw.githubusercontent.com/evanmerkur/kindred-spirits/main/public/assets/Connection_Hands.png" 
+              alt="Caring hands representing the heart and mission of Silver Care Companions" 
               className="rounded-[40px] w-full h-[500px] object-cover shadow-xl"
               referrerPolicy="no-referrer"
             />
