@@ -58,10 +58,10 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
@@ -69,10 +69,10 @@ export default function Home() {
               Helping Your Loved One Stay <br />
               <span className="text-olive">Connected, Engaged, and Supported.</span>
             </h1>
-            <p className="text-xl text-stone-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-stone-600 mb-10 max-w-lg leading-relaxed">
               We support older adults who feel isolated, need social engagement, or would benefit from regular companionship visits.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap gap-4">
               <Link to="/services" className="btn-olive">Explore Services</Link>
               <Link to="/about" className="px-8 py-3 rounded-full border border-stone-300 font-medium hover:bg-stone-100 transition-colors">
                 Learn Our Story
@@ -81,19 +81,19 @@ export default function Home() {
           </motion.div>
 
           <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="mt-16 relative"
+            transition={{ duration: 1 }}
+            className="relative"
           >
             <img 
               src="/assets/Hero_Nashville.png" 
               alt="A kind caregiver and an elderly woman sharing a smile on a Nashville porch." 
-              className="w-full max-w-4xl mx-auto rounded-[60px] shadow-2xl object-cover aspect-[16/9]" 
+              className="w-full max-w-lg mx-auto rounded-full shadow-2xl object-cover aspect-[4/5]" 
               referrerPolicy="no-referrer" 
             />
-            <div className="absolute -bottom-6 -right-6 bg-cream p-8 rounded-3xl shadow-xl max-w-[240px] border border-stone-100 hidden md:block text-left">
+            <div className="absolute -bottom-6 -left-6 bg-cream p-8 rounded-3xl shadow-xl max-w-[240px] border border-stone-100 hidden md:block">
               <p className="font-serif italic text-lg leading-snug text-stone-700">
                 "Having someone to talk to makes every day feel like a gift."
               </p>
