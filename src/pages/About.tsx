@@ -27,8 +27,8 @@ export default function About() {
             transition={{ delay: 0.2 }}
           >
             <img 
-              src="/assets/Connection_Hands.png" 
-              alt="Close-up of two people holding hands, representing a supportive and caring connection and the heart of our mission." 
+              src="/assets/Steady_Companion.png" 
+              alt="A companion and a senior adult walking together in a sunny park." 
               className="rounded-[40px] w-full h-[500px] object-cover shadow-xl"
               referrerPolicy="no-referrer"
             />

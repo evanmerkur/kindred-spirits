@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useEffect } from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 export default function Accessibility() {
   useEffect(() => {
@@ -64,16 +64,6 @@ export default function Accessibility() {
                   <p className="text-xs uppercase tracking-widest font-bold text-stone-400">Email Us</p>
                   <p className="text-lg font-medium text-stone-800">info@silvercarecompanions.com</p>
                 </div>
-              </div>
-            </div>
-
-            <div className="mt-8 flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center text-olive shrink-0">
-                <MapPin className="w-6 h-6" />
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-widest font-bold text-stone-400">Mailing Address</p>
-                <p className="text-lg font-medium text-stone-800">Serving the Greater Nashville Area</p>
               </div>
             </div>
           </section>
