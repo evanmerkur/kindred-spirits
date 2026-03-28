@@ -166,7 +166,7 @@ export default function Services() {
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div className="order-2 md:order-1">
               <img 
-                src="https://raw.githubusercontent.com/evanmerkur/kindred-spirits/main/public/assets/Steady_Companion.png" 
+                src="/assets/Steady_Companion.png" 
                 alt="Senior walking with companion, representing our companionship services" 
                 className="rounded-[40px] w-full h-[400px] object-cover shadow-xl"
                 referrerPolicy="no-referrer"

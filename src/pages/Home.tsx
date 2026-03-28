@@ -89,13 +89,13 @@ export default function Home() {
           >
             <div className="grid grid-cols-2 gap-4">
               <img 
-                src="https://raw.githubusercontent.com/evanmerkur/kindred-spirits/main/public/assets/Hero_Nashville.png" 
+                src="/assets/Hero_Nashville.png" 
                 alt="Senior smiling" 
                 className="w-full h-full object-cover rounded-full aspect-[4/5]" 
                 referrerPolicy="no-referrer" 
               />
               <img 
-                src="https://raw.githubusercontent.com/evanmerkur/kindred-spirits/main/public/assets/Steady_Companion.png" 
+                src="/assets/Steady_Companion.png" 
                 alt="Companion walking" 
                 className="w-full h-full object-cover rounded-full aspect-[4/5] mt-12" 
                 referrerPolicy="no-referrer" 
@@ -217,7 +217,7 @@ export default function Home() {
           </div>
           <div className="relative">
             <img 
-              src="https://raw.githubusercontent.com/evanmerkur/kindred-spirits/main/public/assets/Connection_Hands.png" 
+              src="/assets/Connection_Hands.png" 
               alt="Caring hands" 
               className="rounded-[40px] w-full h-[600px] object-cover shadow-2xl"
               referrerPolicy="no-referrer"
