@@ -88,8 +88,18 @@ export default function Home() {
             className="relative"
           >
             <div className="grid grid-cols-2 gap-4">
-              <img src="https://raw.githubusercontent.com/evanmerkur/kindred-spirits/main/public/assets/Hero_Nashville.png" alt="Senior smiling" className="w-full h-full object-cover rounded-full aspect-[4/5]" referrerPolicy="no-referrer" />
-              <img src="https://raw.githubusercontent.com/evanmerkur/kindred-spirits/main/public/assets/Steady_Companion.png" alt="Companion walking" className="w-full h-full object-cover rounded-full aspect-[4/5] mt-12" referrerPolicy="no-referrer" />
+              <img 
+                src="https://raw.githubusercontent.com/evanmerkur/kindred-spirits/main/public/assets/Hero_Nashville.png" 
+                alt="Senior smiling" 
+                className="w-full h-full object-cover rounded-full aspect-[4/5]" 
+                referrerPolicy="no-referrer" 
+              />
+              <img 
+                src="https://raw.githubusercontent.com/evanmerkur/kindred-spirits/main/public/assets/Steady_Companion.png" 
+                alt="Companion walking" 
+                className="w-full h-full object-cover rounded-full aspect-[4/5] mt-12" 
+                referrerPolicy="no-referrer" 
+              />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-cream p-8 rounded-3xl shadow-xl max-w-[240px] border border-stone-100 hidden md:block">
               <p className="font-serif italic text-lg leading-snug text-stone-700">
