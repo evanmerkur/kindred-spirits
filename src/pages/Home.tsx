@@ -90,7 +90,7 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4">
               <img 
                 src="/assets/Hero_Nashville.png" 
-                alt="A kind caregiver and an elderly woman sharing a smile on a Nashville porch" 
+                alt="A kind caregiver and an elderly woman sharing a smile on a Nashville porch." 
                 className="w-full h-full object-cover rounded-full aspect-[4/5]" 
                 referrerPolicy="no-referrer" 
               />
