@@ -90,13 +90,13 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4">
               <img 
                 src="/assets/Hero_Nashville.png" 
-                alt="Senior smiling" 
+                alt="A kind caregiver and an elderly woman sharing a smile on a Nashville porch" 
                 className="w-full h-full object-cover rounded-full aspect-[4/5]" 
                 referrerPolicy="no-referrer" 
               />
               <img 
                 src="/assets/Steady_Companion.png" 
-                alt="Companion walking" 
+                alt="A companion and a senior adult walking together in a sunny park." 
                 className="w-full h-full object-cover rounded-full aspect-[4/5] mt-12" 
                 referrerPolicy="no-referrer" 
               />
@@ -218,7 +218,7 @@ export default function Home() {
           <div className="relative">
             <img 
               src="/assets/Connection_Hands.png" 
-              alt="Caring hands" 
+              alt="Close-up of two people holding hands, representing a supportive and caring connection." 
               className="rounded-[40px] w-full h-[600px] object-cover shadow-2xl"
               referrerPolicy="no-referrer"
             />

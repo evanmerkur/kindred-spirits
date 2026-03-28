@@ -167,7 +167,7 @@ export default function Services() {
             <div className="order-2 md:order-1">
               <img 
                 src="/assets/Steady_Companion.png" 
-                alt="Senior walking with companion, representing our companionship services" 
+                alt="A companion and a senior adult walking together in a sunny park, representing our companionship services." 
                 className="rounded-[40px] w-full h-[400px] object-cover shadow-xl"
                 referrerPolicy="no-referrer"
               />

@@ -28,7 +28,7 @@ export default function About() {
           >
             <img 
               src="/assets/Connection_Hands.png" 
-              alt="Caring hands representing the heart and mission of Silver Care Companions" 
+              alt="Close-up of two people holding hands, representing a supportive and caring connection and the heart of our mission." 
               className="rounded-[40px] w-full h-[500px] object-cover shadow-xl"
               referrerPolicy="no-referrer"
             />
