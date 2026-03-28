@@ -166,8 +166,8 @@ export default function Services() {
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div className="order-2 md:order-1">
               <img 
-                src="/assets/Steady_Companion.png" 
-                alt="A companion and a senior adult walking together in a sunny park, representing our companionship services." 
+                src="/assets/Communication_Update.png" 
+                alt="A companion and a senior adult engaged in conversation, representing our consistent communication and reporting services." 
                 className="rounded-[40px] w-full h-[400px] object-cover shadow-xl"
                 referrerPolicy="no-referrer"
               />
