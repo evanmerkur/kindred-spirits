@@ -15,7 +15,7 @@ export default function IntakeForm() {
           className="text-center mb-12"
         >
           <span className="text-olive font-medium tracking-widest uppercase text-xs mb-4 block">New Client</span>
-          <h1 className="text-5xl md:text-6xl mb-6 italic">New Patient Intake Form</h1>
+          <h1 className="text-5xl md:text-6xl mb-6 italic">New Companion Intake Form</h1>
           <p className="text-xl text-stone-600">
             Please fill out the form below to help us understand your needs and provide the best possible care.
           </p>

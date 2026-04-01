@@ -13,7 +13,7 @@ export default function Navbar() {
     { name: "Our Story", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "FAQ", href: "/faq" },
-    { name: "New Patient Intake Form", href: "/intake-form" },
+    { name: "New Companion Intake Form", href: "/intake-form" },
   ];
 
   return (
