@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { motion } from "motion/react";
 import { 
   MessageCircle, 
@@ -12,7 +13,6 @@ import {
   FileText
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 const companionshipServices = [
   { icon: <MessageCircle className="w-5 h-5" />, title: "Conversation", description: "Sharing stories, discussing current events, or simply enjoying a quiet moment together." },
@@ -54,66 +54,64 @@ export default function Services() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-12 mb-24">
-          {/* Companionship */}
-          <div className="space-y-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-olive/10 flex items-center justify-center text-olive">
-                <Heart className="w-5 h-5" />
-              </div>
-              <h2 className="text-2xl font-serif">Companionship</h2>
+        <div className="grid md:grid-cols-3 gap-x-8 gap-y-6 mb-24">
+          {/* Pillar Headers - Row 1 */}
+          <div className="flex items-center gap-4 mb-4 px-2">
+            <div className="w-10 h-10 rounded-full bg-stone-200/50 flex items-center justify-center text-stone-600">
+              <Heart className="w-5 h-5" />
             </div>
-            <div className="space-y-6">
-              {companionshipServices.map((s, i) => (
-                <div key={i} className="card-rounded p-6 border border-stone-100 hover:border-olive/20 transition-colors">
-                  <h3 className="font-semibold text-stone-800 mb-2 flex items-center gap-2">
-                    {s.icon} {s.title}
-                  </h3>
-                  <p className="text-stone-600 text-sm leading-relaxed">{s.description}</p>
-                </div>
-              ))}
+            <h2 className="text-3xl font-serif text-stone-800">Companionship</h2>
+          </div>
+          <div className="flex items-center gap-4 mb-4 px-2">
+            <div className="w-10 h-10 rounded-full bg-stone-200/50 flex items-center justify-center text-stone-600">
+              <Car className="w-5 h-5" />
             </div>
+            <h2 className="text-3xl font-serif text-stone-800">Practical Support</h2>
+          </div>
+          <div className="flex items-center gap-4 mb-4 px-2">
+            <div className="w-10 h-10 rounded-full bg-stone-200/50 flex items-center justify-center text-stone-600">
+              <Laptop className="w-5 h-5" />
+            </div>
+            <h2 className="text-3xl font-serif text-stone-800">Connection Support</h2>
           </div>
 
-          {/* Practical Support */}
-          <div className="space-y-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-olive/10 flex items-center justify-center text-olive">
-                <Car className="w-5 h-5" />
-              </div>
-              <h2 className="text-2xl font-serif">Practical Support</h2>
-            </div>
-            <div className="space-y-6">
-              {practicalSupport.map((s, i) => (
-                <div key={i} className="card-rounded p-6 border border-stone-100 hover:border-olive/20 transition-colors">
-                  <h3 className="font-semibold text-stone-800 mb-2 flex items-center gap-2">
-                    {s.icon} {s.title}
-                  </h3>
-                  <p className="text-stone-600 text-sm leading-relaxed">{s.description}</p>
+          {/* Service Cards - Rows 2+ */}
+          {[0, 1, 2, 3].map((index) => (
+            <React.Fragment key={index}>
+              {/* Companionship Column */}
+              {companionshipServices[index] ? (
+                <div className="bg-white rounded-[32px] p-8 shadow-sm border border-stone-100 h-full">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="text-stone-800">{companionshipServices[index].icon}</div>
+                    <h3 className="font-serif text-lg text-stone-800">{companionshipServices[index].title}</h3>
+                  </div>
+                  <p className="text-stone-600 text-[15px] leading-relaxed">{companionshipServices[index].description}</p>
                 </div>
-              ))}
-            </div>
-          </div>
+              ) : <div className="hidden md:block"></div>}
 
-          {/* Connection Support */}
-          <div className="space-y-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-olive/10 flex items-center justify-center text-olive">
-                <Laptop className="w-5 h-5" />
-              </div>
-              <h2 className="text-2xl font-serif">Connection Support</h2>
-            </div>
-            <div className="space-y-6">
-              {connectionSupport.map((s, i) => (
-                <div key={i} className="card-rounded p-6 border border-stone-100 hover:border-olive/20 transition-colors">
-                  <h3 className="font-semibold text-stone-800 mb-2 flex items-center gap-2">
-                    {s.icon} {s.title}
-                  </h3>
-                  <p className="text-stone-600 text-sm leading-relaxed">{s.description}</p>
+              {/* Practical Support Column */}
+              {practicalSupport[index] ? (
+                <div className="bg-white rounded-[32px] p-8 shadow-sm border border-stone-100 h-full">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="text-stone-800">{practicalSupport[index].icon}</div>
+                    <h3 className="font-serif text-lg text-stone-800">{practicalSupport[index].title}</h3>
+                  </div>
+                  <p className="text-stone-600 text-[15px] leading-relaxed">{practicalSupport[index].description}</p>
                 </div>
-              ))}
-            </div>
-          </div>
+              ) : <div className="hidden md:block"></div>}
+
+              {/* Connection Support Column */}
+              {connectionSupport[index] ? (
+                <div className="bg-white rounded-[32px] p-8 shadow-sm border border-stone-100 h-full">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="text-stone-800">{connectionSupport[index].icon}</div>
+                    <h3 className="font-serif text-lg text-stone-800">{connectionSupport[index].title}</h3>
+                  </div>
+                  <p className="text-stone-600 text-[15px] leading-relaxed">{connectionSupport[index].description}</p>
+                </div>
+              ) : <div className="hidden md:block"></div>}
+            </React.Fragment>
+          ))}
         </div>
 
         {/* Typical Visit Visualization */}

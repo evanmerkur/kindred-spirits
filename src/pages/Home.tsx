@@ -58,7 +58,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -81,16 +81,16 @@ export default function Home() {
           </motion.div>
 
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
             className="relative"
           >
             <img 
               src="/assets/Hero_Nashville.png" 
               alt="A kind caregiver and an elderly woman sharing a smile on a Nashville porch." 
-              className="w-full max-w-lg mx-auto rounded-full shadow-2xl object-cover aspect-[4/5]" 
+              className="w-full rounded-[40px] shadow-2xl object-cover aspect-[4/5]" 
               referrerPolicy="no-referrer" 
             />
             <div className="absolute -bottom-6 -left-6 bg-cream p-8 rounded-3xl shadow-xl max-w-[240px] border border-stone-100 hidden md:block">
@@ -131,78 +131,102 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center space-y-6">
+          <div className="grid md:grid-cols-3 gap-x-12 gap-y-8">
+            {/* Icons Row */}
+            <div className="text-center">
               <div className="w-20 h-20 rounded-full bg-olive/10 flex items-center justify-center mx-auto text-olive">
-                <Calendar className="w-10 h-10" />
+                <Phone className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-serif">Step 1: Schedule a Consultation</h3>
-              <p className="text-stone-600 leading-relaxed">We learn about your loved one’s personality, needs, and interests.</p>
             </div>
-            <div className="text-center space-y-6">
+            <div className="text-center">
               <div className="w-20 h-20 rounded-full bg-olive/10 flex items-center justify-center mx-auto text-olive">
                 <UserCheck className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-serif">Step 2: Personalized Match</h3>
-              <p className="text-stone-600 leading-relaxed">We carefully match based on interests and compatibility for a real connection.</p>
             </div>
-            <div className="text-center space-y-6">
+            <div className="text-center">
               <div className="w-20 h-20 rounded-full bg-olive/10 flex items-center justify-center mx-auto text-olive">
                 <Heart className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-serif">Step 3: Ongoing Visits and Support</h3>
-              <p className="text-stone-600 leading-relaxed">Consistent, trusted companionship you can rely on, visit after visit.</p>
+            </div>
+
+            {/* Titles Row */}
+            <div className="text-center">
+              <h3 className="text-3xl font-serif text-stone-900">Step 1: The Discovery Call</h3>
+            </div>
+            <div className="text-center">
+              <h3 className="text-3xl font-serif text-stone-900">Step 2: The Care Meeting</h3>
+            </div>
+            <div className="text-center">
+              <h3 className="text-3xl font-serif text-stone-900">Step 3: Heartfelt Care</h3>
+            </div>
+
+            {/* Descriptions Row */}
+            <div className="text-center">
+              <p className="text-xl text-stone-800 leading-relaxed">
+                A brief, no-pressure conversation to share the needs of your loved one and see if we are a good fit.
+              </p>
+            </div>
+            <div className="text-center">
+              <p className="text-xl text-stone-800 leading-relaxed">
+                We meet with the senior and family to listen and align on a personalized plan for moving forward together.
+              </p>
+            </div>
+            <div className="text-center">
+              <p className="text-xl text-stone-800 leading-relaxed">
+                We begin scheduled visits focused on meaningful engagement, reliable companionship, and peace of mind for the family.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Peace of Mind Section */}
-      <section className="py-24 bg-olive text-cream px-6 overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
-          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-            <path fill="#FFFFFF" d="M44.7,-76.4C58.1,-69.2,70.1,-59.1,79.6,-46.5C89.1,-33.9,96.1,-18.9,95.8,-3.9C95.5,11.1,87.9,26.1,78.2,39.2C68.5,52.3,56.7,63.5,43.1,71.2C29.5,78.9,14.7,83.1,-0.5,83.9C-15.7,84.7,-31.4,82.1,-45.4,74.7C-59.4,67.3,-71.7,55.1,-79.8,40.9C-87.9,26.7,-91.8,10.5,-90.4,-5.2C-89,-20.9,-82.3,-36.1,-72.1,-48.6C-61.9,-61.1,-48.2,-70.9,-34.2,-77.7C-20.2,-84.5,-5.9,-88.3,8.7,-84.8C23.3,-81.3,31.3,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
-          </svg>
-        </div>
-
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center relative z-10">
+      <section className="py-24 bg-olive text-cream px-6 relative overflow-hidden">
+        {/* Background decorative shape */}
+        <div className="absolute top-1/2 -right-20 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
           <div>
-            <h2 className="text-5xl md:text-6xl mb-10 leading-tight">Designed for Families Who Want Peace of Mind</h2>
-            <div className="space-y-8">
-              <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-full border border-cream/30 flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-6 h-6" />
+            <h2 className="text-5xl md:text-6xl font-serif mb-8 leading-[1.1]">
+              Designed for Families <br />
+              Who Want Peace of <br />
+              Mind
+            </h2>
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-full border border-cream/30 flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-4 h-4 stroke-[1.5]" />
                 </div>
                 <div>
-                  <h4 className="text-xl mb-2">Safety & Reliability</h4>
-                  <p className="text-cream/70 leading-relaxed">Full background checks and drug tests on all companions. We prioritize consistency so you see the same familiar face every time.</p>
+                  <h4 className="text-lg font-serif mb-0.5">Safety & Reliability</h4>
+                  <p className="text-cream/80 text-sm leading-relaxed max-w-md">Full background checks and drug tests on all companions. We prioritize consistency so you see the same familiar face every time.</p>
                 </div>
               </div>
-              <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-full border border-cream/30 flex items-center justify-center shrink-0">
-                  <Heart className="w-6 h-6" />
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-full border border-cream/30 flex items-center justify-center shrink-0">
+                  <Heart className="w-4 h-4 stroke-[1.5]" />
                 </div>
                 <div>
-                  <h4 className="text-xl mb-2">Emotional Sensitivity</h4>
-                  <p className="text-cream/70 leading-relaxed">We match based on personality and compatibility, ensuring your loved one feels truly understood and valued.</p>
+                  <h4 className="text-lg font-serif mb-0.5">Emotional Sensitivity</h4>
+                  <p className="text-cream/80 text-sm leading-relaxed max-w-md">We match based on personality and compatibility, ensuring your loved one feels truly understood and valued.</p>
                 </div>
               </div>
-              <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-full border border-cream/30 flex items-center justify-center shrink-0">
-                  <CheckCircle2 className="w-6 h-6" />
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-full border border-cream/30 flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="w-4 h-4 stroke-[1.5]" />
                 </div>
                 <div>
-                  <h4 className="text-xl mb-2">Post-Visit Reporting</h4>
-                  <p className="text-cream/70 leading-relaxed">Detailed reports sent after every visit to family members or anyone who would like to stay updated.</p>
+                  <h4 className="text-lg font-serif mb-0.5">Post-Visit Reporting</h4>
+                  <p className="text-cream/80 text-sm leading-relaxed max-w-md">Detailed reports sent after every visit to family members or anyone who would like to stay updated.</p>
                 </div>
               </div>
-              <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-full border border-cream/30 flex items-center justify-center shrink-0">
-                  <CheckCircle2 className="w-6 h-6" />
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-full border border-cream/30 flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="w-4 h-4 stroke-[1.5]" />
                 </div>
                 <div>
-                  <h4 className="text-xl mb-2">No Hidden Costs</h4>
-                  <p className="text-cream/70 leading-relaxed">Transparent flat-rate pricing. No long-term contracts or surprise fees. Peace of mind shouldn't be complicated.</p>
+                  <h4 className="text-lg font-serif mb-0.5">No Hidden Costs</h4>
+                  <p className="text-cream/80 text-sm leading-relaxed max-w-md">Transparent flat-rate pricing. No long-term contracts or surprise fees. Peace of mind shouldn't be complicated.</p>
                 </div>
               </div>
             </div>
@@ -211,10 +235,11 @@ export default function Home() {
             <img 
               src="/assets/Connection_Hands.png" 
               alt="Close-up of two people holding hands, representing a supportive and caring connection." 
-              className="rounded-[40px] w-full h-[600px] object-cover shadow-2xl"
+              className="rounded-[60px] w-full h-[700px] object-cover shadow-2xl relative z-10"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-cream/10 rounded-full blur-3xl"></div>
+            {/* Subtle overlay shape behind image as seen in screenshot */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-white/5 rounded-full blur-2xl -z-10"></div>
           </div>
         </div>
       </section>
@@ -222,7 +247,7 @@ export default function Home() {
       {/* Contact Section */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="card-rounded p-12 md:p-20 grid lg:grid-cols-2 gap-20">
+          <div className="card-rounded p-12 md:p-20 grid md:grid-cols-2 gap-20">
             <div>
               <h2 className="text-5xl mb-8 italic">Let's start a <br />conversation.</h2>
               <p className="text-lg text-stone-600 mb-12">
@@ -277,17 +302,17 @@ export default function Home() {
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-stone-500 uppercase tracking-wider">Your Name</label>
-                      <input name="name" type="text" required className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="Jane Doe" />
+                      <label htmlFor="name" className="text-sm font-semibold text-stone-500 uppercase tracking-wider">Your Name</label>
+                      <input id="name" name="name" type="text" required className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="Jane Doe" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-stone-500 uppercase tracking-wider">Email Address</label>
-                      <input name="email" type="email" required className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="jane@example.com" />
+                      <label htmlFor="email" className="text-sm font-semibold text-stone-500 uppercase tracking-wider">Email Address</label>
+                      <input id="email" name="email" type="email" required className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="jane@example.com" />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-stone-500 uppercase tracking-wider">How can we help?</label>
-                    <textarea name="message" rows={4} required className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="Tell us a little about your needs..."></textarea>
+                    <label htmlFor="message" className="text-sm font-semibold text-stone-500 uppercase tracking-wider">How can we help?</label>
+                    <textarea id="message" name="message" rows={4} required className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="Tell us a little about your needs..."></textarea>
                   </div>
                   <button 
                     type="submit" 

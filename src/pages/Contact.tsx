@@ -45,54 +45,32 @@ export default function Contact() {
   return (
     <div className="pt-32 pb-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-20"
-        >
-          <span className="text-olive font-medium tracking-widest uppercase text-xs mb-4 block">Contact Us</span>
-          <h1 className="text-5xl md:text-6xl mb-6">Let's Start a Conversation</h1>
-          <p className="text-xl text-stone-600 max-w-2xl mx-auto">
-            Whether you're looking for support for yourself or a loved one, 
-            we're here to listen and help you find the perfect companion.
-          </p>
-        </motion.div>
-
-        <div className="card-rounded p-12 md:p-20 grid lg:grid-cols-2 gap-20 bg-warm-bg">
+        <div className="card-rounded p-12 md:p-20 grid md:grid-cols-2 gap-20">
           <div>
-            <h2 className="text-4xl mb-8 italic font-serif">Reach Out Directly</h2>
-            <p className="text-lg text-stone-600 mb-12 leading-relaxed">
-              We understand that choosing care is a personal decision. 
-              Feel free to call or email us, or use the form to share a bit about your situation.
+            <h1 className="text-5xl mb-8 italic">Let's start a <br />conversation.</h1>
+            <p className="text-lg text-stone-600 mb-12">
+              Whether you're looking for support for yourself or a loved one, 
+              we're here to listen and help you find the perfect companion.
             </p>
             
-            <div className="space-y-8">
-              <div className="flex items-center gap-6">
-                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-olive shadow-sm">
-                  <Phone className="w-6 h-6" />
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-warm-bg flex items-center justify-center text-olive">
+                  <Phone className="w-5 h-5" />
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-stone-400 uppercase tracking-wider">Phone</p>
-                  <span className="text-stone-700 font-medium text-lg">615-241-6881</span>
-                </div>
+                <span className="text-stone-700 font-medium">615-241-6881</span>
               </div>
-              <div className="flex items-center gap-6">
-                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-olive shadow-sm">
-                  <Mail className="w-6 h-6" />
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-warm-bg flex items-center justify-center text-olive">
+                  <Mail className="w-5 h-5" />
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-stone-400 uppercase tracking-wider">Email</p>
-                  <span className="text-stone-700 font-medium text-lg">info@silvercarecompanions.com</span>
-                </div>
+                <span className="text-stone-700 font-medium">info@silvercarecompanions.com</span>
               </div>
-              <div className="flex items-center gap-6">
-                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-olive shadow-sm">
-                  <MapPin className="w-6 h-6" />
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-warm-bg flex items-center justify-center text-olive">
+                  <MapPin className="w-5 h-5" />
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-stone-400 uppercase tracking-wider">Location</p>
-                  <span className="text-stone-700 font-medium text-lg">Serving the Greater Nashville Area</span>
-                </div>
+                <span className="text-stone-700 font-medium">Serving the Greater Nashville Area</span>
               </div>
             </div>
           </div>
@@ -102,7 +80,7 @@ export default function Contact() {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="h-full flex flex-col items-center justify-center text-center space-y-6 bg-white/50 rounded-3xl p-12"
+                className="h-full flex flex-col items-center justify-center text-center space-y-6 bg-stone-50 rounded-3xl p-12"
               >
                 <div className="w-20 h-20 rounded-full bg-olive/10 flex items-center justify-center text-olive">
                   <ShieldCheck className="w-10 h-10" />
@@ -122,17 +100,17 @@ export default function Contact() {
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-stone-500 uppercase tracking-wider">Your Name</label>
-                    <input name="name" type="text" required className="w-full bg-white border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="Jane Doe" />
+                    <label htmlFor="name" className="text-sm font-semibold text-stone-500 uppercase tracking-wider">Your Name</label>
+                    <input id="name" name="name" type="text" required className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="Jane Doe" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-stone-500 uppercase tracking-wider">Email Address</label>
-                    <input name="email" type="email" required className="w-full bg-white border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="jane@example.com" />
+                    <label htmlFor="email" className="text-sm font-semibold text-stone-500 uppercase tracking-wider">Email Address</label>
+                    <input id="email" name="email" type="email" required className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="jane@example.com" />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-semibold text-stone-500 uppercase tracking-wider">How can we help?</label>
-                  <textarea name="message" rows={6} required className="w-full bg-white border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="Tell us a little about your needs..."></textarea>
+                  <label htmlFor="message" className="text-sm font-semibold text-stone-500 uppercase tracking-wider">How can we help?</label>
+                  <textarea id="message" name="message" rows={4} required className="w-full bg-stone-50 border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:border-olive transition-colors" placeholder="Tell us a little about your needs..."></textarea>
                 </div>
                 <button 
                   type="submit" 
