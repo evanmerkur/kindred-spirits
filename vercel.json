@@ -9,6 +9,10 @@
     {
       "source": "/api/contact",
       "destination": "/api/contact.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
   ]
 }
