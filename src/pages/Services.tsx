@@ -122,7 +122,7 @@ export default function Services() {
             </div>
             <h2 className="text-3xl md:text-4xl mb-6">What a Typical Visit Looks Like</h2>
             <p className="text-lg text-stone-600 mb-10">
-              We focus on meaningful time. A typical 2.5-hour visit is designed to be relaxed, 
+              We focus on meaningful time. A typical 3-hour visit is designed to be relaxed, 
               unhurried, and deeply personal.
             </p>
             
