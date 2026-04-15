@@ -244,6 +244,75 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Newsletter Signup Section */}
+      <section className="py-24 px-6 bg-[#F5F1EB]">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-serif text-[#1D3557] mb-6 text-left max-w-xl flex items-start gap-3">
+              <span className="shrink-0 mt-1">🛡️</span>
+              <span className="flex flex-col">
+                <span>Meaningful Connection,</span>
+                <span>Straight to Your Inbox.</span>
+              </span>
+            </h2>
+            <h3 className="text-[18pt] font-sans text-stone-700 mb-8 leading-relaxed">
+              Nashville healthy aging insights, local memory care resources, and collaborative connection tips, delivered monthly.
+            </h3>
+            <ul className="space-y-4">
+              {[
+                "Cognitive Wellness strategies",
+                "Emotional & Social Health guidance",
+                "Curated Nashville & Middle TN local resources"
+              ].map((benefit, i) => (
+                <li key={i} className="flex items-center gap-3 text-[16pt] text-[#1D3557] font-sans">
+                  <div className="w-2 h-2 rounded-full bg-olive shrink-0" />
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="bg-[#F5F1EB] p-8 rounded-3xl border border-stone-200 shadow-sm flex flex-col items-center justify-center"
+          >
+            <div className="w-full max-w-[480px]">
+              <form 
+                action="https://silvercarecompanions.substack.com/api/v1/free?" 
+                method="POST" 
+                target="_blank"
+                className="flex flex-col sm:flex-row gap-3"
+              >
+                <input 
+                  type="email" 
+                  name="email" 
+                  placeholder="Enter your email" 
+                  required 
+                  className="flex-grow px-6 py-4 rounded-full border border-stone-300 bg-white/50 focus:outline-none focus:border-olive transition-colors font-sans text-lg"
+                />
+                <button 
+                  type="submit" 
+                  className="px-8 py-4 bg-[#789B8D] text-white rounded-full font-bold text-lg shadow-md hover:shadow-lg transition-all whitespace-nowrap flex items-center justify-center"
+                >
+                  Get Heartfelt Tips
+                </button>
+              </form>
+              <p className="text-[14pt] text-stone-400 font-sans text-center mt-6">
+                We value your privacy. Your email will never be shared, and you can unsubscribe at any time with one click.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">

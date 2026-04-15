@@ -12,6 +12,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Our Story", href: "/about" },
     { name: "Services", href: "/services" },
+    { name: "Blog", href: "/blog" },
     { name: "FAQ", href: "/faq" },
     { name: "New Companion Intake Form", href: "/intake-form" },
   ];
