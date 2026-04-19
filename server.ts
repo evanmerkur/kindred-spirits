@@ -25,8 +25,6 @@ async function startServer() {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    // Configure your email service here
-    // For production, use environment variables for credentials
     const transporter = nodemailer.createTransport({
       service: process.env.EMAIL_SERVICE || "gmail",
       auth: {
@@ -44,7 +42,6 @@ async function startServer() {
     };
 
     try {
-      // If credentials are not provided, we'll just log it for now
       if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
         console.log("Email credentials not found. Logging message instead:");
         console.log("To: info@silvercarecompanions.com");
@@ -52,7 +49,6 @@ async function startServer() {
         console.log(`Subject: ${mailOptions.subject}`);
         console.log(`Body: ${mailOptions.text}`);
         
-        // Return success to the frontend for prototype purposes
         return res.json({ 
           success: true, 
           message: "Message received (logged to server console as email credentials are not configured)." 
@@ -64,6 +60,21 @@ async function startServer() {
     } catch (error) {
       console.error("Error sending email:", error);
       res.status(500).json({ error: "Failed to send email" });
+    }
+  });
+
+  // RSS Proxy endpoint
+  app.get("/api/blog-feed", async (req, res) => {
+    const SUBSTACK_URL = "https://silvercarecompanions.substack.com/feed";
+    try {
+      const response = await fetch(SUBSTACK_URL);
+      if (!response.ok) throw new Error("Failed to fetch RSS feed");
+      const xml = await response.text();
+      res.set("Content-Type", "text/xml");
+      res.send(xml);
+    } catch (error) {
+      console.error("RSS fetch error:", error);
+      res.status(500).json({ error: "Failed to fetch blog feed" });
     }
   });
 

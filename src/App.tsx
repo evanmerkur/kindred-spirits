@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
+import BlogPostDetail from "./pages/BlogPostDetail";
 import FAQ from "./pages/FAQ";
 import Services from "./pages/Services";
 import About from "./pages/About";
@@ -20,6 +21,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPostDetail />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
