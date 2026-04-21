@@ -52,27 +52,46 @@ async function startServer() {
   // RSS Proxy endpoint using library for better robustness
   app.get("/api/blog-feed", async (req, res) => {
     const SUBSTACK_URL = "https://silvercarecompanions.substack.com/feed";
-    console.log(`[RSS Proxy] Fetching feed using RSS-Parser from: ${SUBSTACK_URL}`);
+    console.log(`[RSS Proxy] Fetching feed using RSS-Parser: ${SUBSTACK_URL}`);
     
     try {
+      // Use rss-parser to get a clean object
       const feed = await parser.parseURL(SUBSTACK_URL);
       console.log(`[RSS Proxy] Success! Found ${feed.items?.length || 0} items.`);
       
-      // Convert back to XML string to preserve full content for the frontend parser
-      // or we can structure the response. Since the frontend expects XML, let's 
-      // fetch raw text but use a better fetch config.
-      const response = await fetch(SUBSTACK_URL, {
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-          'Accept': 'application/rss+xml, application/xml, text/xml'
+      // Map to our BlogPost interface so the frontend doesn't have to do it
+      const posts = feed.items.map(item => {
+        // Extract content
+        const content = item['content:encoded'] || item.content || "";
+        
+        // Extract image
+        let image = "/assets/Hero_Nashville.png";
+        if (item.enclosure && item.enclosure.url) {
+          image = item.enclosure.url;
+        } else {
+          // Look for images in content
+          const imgRegex = /<img[^>]+src="([^">]+)"/;
+          const match = content.match(imgRegex);
+          if (match) image = match[1];
         }
+
+        return {
+          title: item.title || "",
+          link: item.link || "",
+          pubDate: item.pubDate || "",
+          content: content,
+          contentSnippet: item.contentSnippet || "",
+          guid: item.guid || item.link || "",
+          isoDate: item.isoDate || new Date().toISOString(),
+          slug: item.link ? item.link.split("/").pop()?.split("?")[0] : item.guid,
+          image: image
+        };
       });
-      const xml = await response.text();
-      res.set("Content-Type", "text/xml; charset=utf-8");
-      res.send(xml);
+
+      res.json(posts);
     } catch (error) {
       console.error("[RSS Proxy] Error:", error);
-      res.status(500).json({ error: "Failed to fetch" });
+      res.status(500).json({ error: "Failed to fetch and parse blog feed", details: String(error) });
     }
   });
 
