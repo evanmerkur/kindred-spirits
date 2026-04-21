@@ -66,15 +66,42 @@ async function startServer() {
   // RSS Proxy endpoint
   app.get("/api/blog-feed", async (req, res) => {
     const SUBSTACK_URL = "https://silvercarecompanions.substack.com/feed";
+    console.log(`[RSS Proxy] Fetching feed from: ${SUBSTACK_URL}`);
     try {
-      const response = await fetch(SUBSTACK_URL);
-      if (!response.ok) throw new Error("Failed to fetch RSS feed");
+      const response = await fetch(SUBSTACK_URL, {
+        method: 'GET',
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+          'Accept-Language': 'en-US,en;q=0.9',
+          'Cache-Control': 'no-cache',
+          'Pragma': 'no-cache'
+        },
+        redirect: 'follow'
+      });
+      
+      if (!response.ok) {
+        const errorBody = await response.text();
+        console.error(`[RSS Proxy] Error: ${response.status}. Body: ${errorBody.slice(0, 100)}`);
+        throw new Error(`Substack returned ${response.status}: ${response.statusText}`);
+      }
+      
       const xml = await response.text();
-      res.set("Content-Type", "text/xml");
+      console.log(`[RSS Proxy] Success! Received ${xml.length} bytes.`);
+      
+      // If we got very little data, log a warning
+      if (xml.length < 1000) {
+        console.warn("[RSS Proxy] Warning: Received suspiciously small XML payload.");
+      }
+
+      res.set("Content-Type", "text/xml; charset=utf-8");
       res.send(xml);
     } catch (error) {
-      console.error("RSS fetch error:", error);
-      res.status(500).json({ error: "Failed to fetch blog feed" });
+      console.error("[RSS Proxy] Fatal fetch error:", error);
+      res.status(500).json({ 
+        error: "Failed to fetch blog feed",
+        details: error instanceof Error ? error.message : String(error)
+      });
     }
   });
 

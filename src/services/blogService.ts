@@ -17,8 +17,15 @@ export async function fetchBlogPosts(): Promise<BlogPost[]> {
     // Adding a timestamp as a cache-buster to ensure we get the latest feed
     const cacheBuster = `?t=${new Date().getTime()}`;
     const response = await fetch(`${SUBSTACK_URL}${cacheBuster}`);
-    if (!response.ok) throw new Error("Network response was not ok");
+    
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      console.error("Blog fetch failed:", response.status, errorData);
+      throw new Error(`Network response was not ok: ${response.status}`);
+    }
+    
     const xmlText = await response.text();
+    console.log("Blog feed XML received, length:", xmlText.length);
     
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(xmlText, "text/xml");
@@ -31,6 +38,11 @@ export async function fetchBlogPosts(): Promise<BlogPost[]> {
     }
 
     const items = Array.from(xmlDoc.querySelectorAll("item"));
+    console.log(`Found ${items.length} blog items in feed.`);
+
+    if (items.length === 0) {
+      console.warn("No items found. XML Head:", xmlText.slice(0, 200));
+    }
 
     return items.map((item) => {
       const title = item.querySelector("title")?.textContent || "";
