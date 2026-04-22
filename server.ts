@@ -19,73 +19,34 @@ async function startServer() {
 
   app.use(express.json());
 
-  console.log(`[System] Booting Silver Care Companions Server...`);
-  console.log(`[System] Mode: ${process.env.NODE_ENV}`);
+  // Log all incoming requests for debugging production traffic
+  app.use((req, res, next) => {
+    console.log(`[Server] ${req.method} ${req.url}`);
+    next();
+  });
 
-  // System Status Check - Used to verify the backend bridge is active
+  // System Status Check - TOP LEVEL
   app.get("/api/status", (req, res) => {
     res.json({
       status: "online",
-      environment: process.env.NODE_ENV || "development",
-      timestamp: new Date().toISOString(),
-      service: "Silver Care Backend Bridge"
+      mode: process.env.NODE_ENV || "unknown",
+      time: new Date().toISOString()
     });
   });
 
-  // Contact API endpoint
-  app.post("/api/contact", async (req, res) => {
-    // ... logic remains same ...
-    const { name, email, message } = req.body;
-    if (!name || !email || !message) {
-      return res.status(400).json({ error: "All fields are required" });
-    }
-    const transporter = nodemailer.createTransport({
-      service: process.env.EMAIL_SERVICE || "gmail",
-      auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
-    });
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: "info@silvercarecompanions.com",
-      subject: `New Contact Inquiry from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-      replyTo: email,
-    };
-    try {
-      if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-        console.log("Email credentials not found. Logging message instead.");
-        return res.json({ success: true, message: "Logged to console." });
-      }
-      await transporter.sendMail(mailOptions);
-      res.json({ success: true, message: "Sent" });
-    } catch (e) { res.status(500).json({ error: "Error" }); }
-  });
-
-  // RSS Proxy endpoint using library for better robustness
+  // RSS Proxy endpoint
   app.get("/api/blog-feed", async (req, res) => {
     const SUBSTACK_URL = "https://silvercarecompanions.substack.com/feed";
-    console.log(`[RSS Proxy] Fetching feed using RSS-Parser: ${SUBSTACK_URL}`);
-    
     try {
-      // Use rss-parser to get a clean object
       const feed = await parser.parseURL(SUBSTACK_URL);
-      console.log(`[RSS Proxy] Success! Found ${feed.items?.length || 0} items.`);
-      
-      // Map to our BlogPost interface so the frontend doesn't have to do it
       const posts = feed.items.map(item => {
-        // Extract content
         const content = item['content:encoded'] || item.content || "";
-        
-        // Extract image
         let image = "/assets/Hero_Nashville.png";
-        if (item.enclosure && item.enclosure.url) {
-          image = item.enclosure.url;
-        } else {
-          // Look for images in content
-          const imgRegex = /<img[^>]+src="([^">]+)"/;
-          const match = content.match(imgRegex);
+        if (item.enclosure?.url) image = item.enclosure.url;
+        else {
+          const match = content.match(/<img[^>]+src="([^">]+)"/);
           if (match) image = match[1];
         }
-
         return {
           title: item.title || "",
           link: item.link || "",
@@ -98,23 +59,38 @@ async function startServer() {
           image: image
         };
       });
-
-      res.set({
-        "Content-Type": "application/json; charset=utf-8",
-        "Cache-Control": "public, s-maxage=600, stale-while-revalidate=1200"
-      });
       res.json(posts);
     } catch (error) {
-      console.error("[RSS Proxy] Fatal Error during fetch/parse:", error);
-      res.status(500).json({ 
-        error: "Failed to bridge Substack Feed", 
-        details: String(error),
-        timestamp: new Date().toISOString()
-      });
+      console.error("[RSS Proxy] Error:", error);
+      res.status(500).json({ error: "Feed Fetch Failed", details: String(error) });
     }
   });
 
-  // Vite middleware for development
+  // Contact API
+  app.post("/api/contact", async (req, res) => {
+    const { name, email, message } = req.body;
+    if (!name || !email || !message) return res.status(400).json({ error: "Missing fields" });
+    const transporter = nodemailer.createTransport({
+      service: process.env.EMAIL_SERVICE || "gmail",
+      auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
+    });
+    try {
+      if (!process.env.EMAIL_USER) {
+        console.log("Email info logged (no credentials):", req.body);
+        return res.json({ success: true });
+      }
+      await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: "info@silvercarecompanions.com",
+        subject: `New Inquiry: ${name}`,
+        text: `From: ${name} (${email})\n\n${message}`,
+        replyTo: email
+      });
+      res.json({ success: true });
+    } catch (e) { res.status(500).json({ error: String(e) }); }
+  });
+
+  // Production vs Development serving
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },
@@ -130,7 +106,7 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`[Server] Live on port ${PORT}`);
   });
 }
 
