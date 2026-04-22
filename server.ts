@@ -19,7 +19,18 @@ async function startServer() {
 
   app.use(express.json());
 
-  console.log(`[Server] Starting in ${process.env.NODE_ENV === 'production' ? 'PRODUCTION' : 'DEVELOPMENT'} mode`);
+  console.log(`[System] Booting Silver Care Companions Server...`);
+  console.log(`[System] Mode: ${process.env.NODE_ENV}`);
+
+  // System Status Check - Used to verify the backend bridge is active
+  app.get("/api/status", (req, res) => {
+    res.json({
+      status: "online",
+      environment: process.env.NODE_ENV || "development",
+      timestamp: new Date().toISOString(),
+      service: "Silver Care Backend Bridge"
+    });
+  });
 
   // Contact API endpoint
   app.post("/api/contact", async (req, res) => {
@@ -88,10 +99,18 @@ async function startServer() {
         };
       });
 
+      res.set({
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "public, s-maxage=600, stale-while-revalidate=1200"
+      });
       res.json(posts);
     } catch (error) {
-      console.error("[RSS Proxy] Error:", error);
-      res.status(500).json({ error: "Failed to fetch and parse blog feed", details: String(error) });
+      console.error("[RSS Proxy] Fatal Error during fetch/parse:", error);
+      res.status(500).json({ 
+        error: "Failed to bridge Substack Feed", 
+        details: String(error),
+        timestamp: new Date().toISOString()
+      });
     }
   });
 
